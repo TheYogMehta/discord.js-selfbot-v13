@@ -90,6 +90,12 @@ class BaseMessageComponent {
         component = data instanceof TextInputComponent ? data : new TextInputComponent(data);
         break;
       }
+      // New Component's patch
+      case 17: {
+        const NewComponent = require('./NewComponents');
+        component = new NewComponent(data)
+        break;
+      }
       default:
         if (client) {
           client.emit(Events.DEBUG, `[BaseMessageComponent] Received component with unknown type: ${data.type}`);
