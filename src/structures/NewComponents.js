@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseMessageComponent = require('discord.js-selfbot-v13/src/structures/BaseMessageComponent');
+const BaseMessageComponent = require('./BaseMessageComponent');
 
 class NewComponent extends BaseMessageComponent {
     constructor(data = {}) {
