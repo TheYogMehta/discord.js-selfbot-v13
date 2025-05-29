@@ -1,6 +1,6 @@
 'use strict';
 
-const BaseMessageComponent = require('./BaseMessageComponent');
+const BaseMessageComponent = require('discord.js-selfbot-v13/src/structures/BaseMessageComponent');
 
 class NewComponent extends BaseMessageComponent {
     constructor(data = {}) {
@@ -17,12 +17,7 @@ class NewComponent extends BaseMessageComponent {
             } 
             // Components
             else if (c.type === 1){
-                this.components = c.components.map(c => {
-                    return {
-                        customId: c.custom_id,
-                        label: c.label,
-                    }
-                });
+                this.components = c.components.map(_c => BaseMessageComponent.create(_c));
             }
         });
     }
